@@ -11,7 +11,6 @@
 	    	<div id="page-banner">
 	    		<h1 class="title">Bookorama</h1>
           <p>Books for Ninjas</p>
-          <a href="https://www.google.com">click here</a>
           <form id="search-books">
             <input type="text" placeholder="Search books..." />
           </form>
@@ -37,11 +36,13 @@
 	    			<span class="delete">delete</span>
 	    		</li>
 	    	</ul>
-	    </div>
+        </div>      
 	    <form id="add-book">
-	    	<input type="text" placeholder="Add a book..." />
-	    	<button>Add</button>
-	    </form>
+            <input type="checkbox" id="hide" />
+            <label for="hide">Hide all books</label>
+            <input type="text" placeholder="Add a book..." />
+            <button>Add</button>
+            </form>
 
     </div>
     <script src="app.js"></script>

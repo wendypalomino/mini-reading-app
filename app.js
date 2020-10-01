@@ -1,6 +1,6 @@
 const list = document.querySelector('#book-list ul')
 
-//Delete books
+//1)Delete books
 function deleteHandler(event){
     if(event.target.className == 'delete'){
         const li = event.target.parentElement;
@@ -10,7 +10,7 @@ function deleteHandler(event){
 
 list.addEventListener( 'click', deleteHandler)
 
-//Add books
+//2)Add books
 
 const addForm = document.forms['add-book']
 
@@ -39,8 +39,20 @@ bookName.textContent = value;
 
 bookName.classList.add('name');
 deleteBtn.classList.add('delete');
-
-
 }
 
 addForm.addEventListener('submit', addBookHandler)
+
+//Hide books
+
+const hideBox = document.querySelector('#hide')
+
+function hideBoxHandler(){
+    if(hideBox.checked){
+        list.style.display = 'none'
+    } else {
+        list.style.display = 'initial'
+    }
+}
+
+hideBox.addEventListener('change', hideBoxHandler)
