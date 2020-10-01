@@ -9,3 +9,38 @@ function deleteHandler(event){
 }
 
 list.addEventListener( 'click', deleteHandler)
+
+//Add books
+
+const addForm = document.forms['add-book']
+
+function addBookHandler(event){
+event.preventDefault();
+const value = addForm.querySelector('input[type="text"]').value
+
+//create elements
+
+const li  = document.createElement('li');
+const bookName = document.createElement('span');
+const deleteBtn = document.createElement('span')
+
+// Append to DOM
+
+li.appendChild(bookName);
+li.appendChild(deleteBtn);
+list.appendChild(li)
+
+//Add content
+
+deleteBtn.textContent = 'delete';
+bookName.textContent = value;
+
+//Add classes
+
+bookName.classList.add('name');
+deleteBtn.classList.add('delete');
+
+
+}
+
+addForm.addEventListener('submit', addBookHandler)
