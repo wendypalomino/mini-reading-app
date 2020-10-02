@@ -56,3 +56,23 @@ function hideBoxHandler(){
 }
 
 hideBox.addEventListener('change', hideBoxHandler)
+
+//Filter Books
+
+const searchBar= document.forms['search-books'].querySelector('input');
+
+function searchHandler(event){
+    const term = event.target.value.toLowerCase();
+    const books = list.querySelectorAll('li');
+    books.forEach( book => {
+        const title = book.firstElementChild.textContent;
+        if(title.toLocaleLowerCase().indexOf(event.target.value) != -1){
+            book.style.display = 'block';
+        } else {
+            book.style.display = 'none'
+        }
+    })
+
+}
+
+searchBar.addEventListener('keyup', searchHandler)
